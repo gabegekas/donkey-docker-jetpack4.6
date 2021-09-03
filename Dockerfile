@@ -32,7 +32,8 @@ RUN apt-get update && \
     pip3 install -U pip testresources setuptools && \
     pip3 install -U futures==3.1.1 protobuf==3.12.2 pybind11==2.5.0 && \
     pip3 install -U cython==0.29.21 pyserial && \
-    pip3 install -U future==0.18.2 mock==4.0.2 h5py==2.10.0 \
+    pip3 install -U future==0.18.2 mock==4.0.2 h5py \
+# h5py==2.10.0
     keras_preprocessing==1.1.2 keras_applications==1.0.8 gast==0.3.3 && \
     pip3 install -U absl-py==0.9.0 py-cpuinfo==7.0.0 psutil==5.7.2 \
     portpicker==1.3.1 six requests==2.24.0 astor==0.8.1 \
