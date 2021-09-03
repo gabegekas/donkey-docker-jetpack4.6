@@ -26,7 +26,7 @@ RUN python3 -m virtualenv -p python3 ~/projects/envs/donkey \
 
 RUN echo "source ~/projects/envs/donkey/bin/activate" >> ~/.bashrc
 
-RUN . ~/.bashrc
+# RUN . ~/.bashrc
 
 RUN . ~/projects/envs/donkey/bin/activate
 
