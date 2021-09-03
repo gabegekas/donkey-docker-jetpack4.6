@@ -4,9 +4,9 @@ FROM nvcr.io/nvidia/l4t-base:r32.6.1
 # https://docs.google.com/document/d/1Gy4CEKjqXZub0rz-YmxFOakj9O_ZjMmlUYe7NLdM4FY/edit
 # starting at "DonkeyCar AI Framework"
 
-RUN sudo apt-get update && sudo apt-get upgrade
+RUN apt-get update && apt-get upgrade
 
-RUN sudo apt-get install -y build-essential python3 \
+RUN apt-get install -y build-essential python3 \
     python3-dev python3-pip libhdf5-serial-dev hdf5-tools \
     libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev \
     libblas-dev gfortran libxslt1-dev libxml2-dev \
@@ -44,7 +44,7 @@ RUN pip3 install pycuda
 
 RUN cd ~/projects && wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whlcp p57jwntv436lfrd78inwl7iml6p13fzh.whl torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
     pip3 install torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
-    sudo apt-get install libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev && \
+    apt-get install libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev && \
     git clone -b v0.9.0 https://github.com/pytorch/vision torchvision && \
     cd torchvision && \
     python setup.py install &&\
@@ -56,7 +56,7 @@ RUN cd ~/projects && git clone https://github.com/autorope/donkeycar && \
 
 RUN cd ~/projects/donkeycar && donkey createcar --path ~/projects/d3
 
-RUN sudo apt-get install python3-dev python3-numpy \
+RUN apt-get install python3-dev python3-numpy \
     python-dev libsdl-dev libsdl1.2-dev \
     libsdl-image1.2-dev libsdl-mixer1.2-dev \
     libsdl-ttf2.0-dev libsdl1.2-dev libsmpeg-dev \
