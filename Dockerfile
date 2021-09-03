@@ -26,9 +26,9 @@ RUN python3 -m virtualenv -p python3 ~/projects/envs/donkey \
 
 RUN echo "source ~/projects/envs/donkey/bin/activate" >> ~/.bashrc
 
-RUN source ~/.bashrc
+RUN . ~/.bashrc
 
-RUN source ~/projects/envs/donkey/bin/activate
+RUN . ~/projects/envs/donkey/bin/activate
 
 RUN pip3 install -U pip testresources setuptools && \
     pip3 install -U futures==3.1.1 protobuf==3.12.2 pybind11==2.5.0 && \
