@@ -18,13 +18,16 @@ RUN pip3 install Jetson.GPIO
 
 # omitting user modifications
 
-RUN cd ~ && mkdir projects && cd projects && \
-    mkdir envs && cd envs && pip3 install virtualenv
+RUN cd ~ && mkdir projects && cd projects
+#    && \
+#    mkdir envs && cd envs && pip3 install virtualenv
 
-RUN python3 -m virtualenv -p python3 ~/projects/envs/donkey \
-    --system-site-packages
+# no need for virtual environment
 
-RUN echo "source ~/projects/envs/donkey/bin/activate" >> ~/.bashrc
+# RUN python3 -m virtualenv -p python3 ~/projects/envs/donkey \
+#    --system-site-packages
+
+# RUN echo "source ~/projects/envs/donkey/bin/activate" >> ~/.bashrc
 
 # RUN . ~/.bashrc
 
