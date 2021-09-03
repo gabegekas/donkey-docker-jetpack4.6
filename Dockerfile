@@ -6,7 +6,7 @@ FROM nvcr.io/nvidia/l4t-base:r32.6.1
 
 RUN apt-get update -y && apt-get upgrade -y
 
-RUN wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz && \
+RUN wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz --no-check-certificate && \
     tar -xf Python-3.7.7.tgz && cd Python-3.7.7 && \
     ./configure --enable-optimizations && make && make altinstall && cd && \
     apt-get install -y build-essential \
