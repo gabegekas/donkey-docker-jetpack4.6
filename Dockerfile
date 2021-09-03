@@ -6,16 +6,16 @@ FROM nvcr.io/nvidia/l4t-base:r32.6.1
 
 RUN apt-get update -y && apt-get upgrade -y
 
-RUN wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz --no-check-certificate && \
-    tar -xf Python-3.7.7.tgz && cd Python-3.7.7 && \
-    ./configure --enable-optimizations && make && make altinstall && cd && \
-    apt-get install -y build-essential \
+RUN apt-get install -y build-essential \
     python3-dev python3-pip libhdf5-serial-dev hdf5-tools \
     libhdf5-dev zlib1g-dev zip libjpeg8-dev liblapack-dev \
     libblas-dev gfortran libxslt1-dev libxml2-dev \
     libffi-dev libcurl4-openssl-dev libssl-dev libpng-dev \
     libopenblas-dev openmpi-doc openmpi-bin libopenmpi-dev \
-    libopenblas-dev git nano
+    libopenblas-dev git nano && \
+    wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz --no-check-certificate && \
+    tar -xf Python-3.7.7.tgz && cd Python-3.7.7 && \
+    ./configure --enable-optimizations && make && make altinstall && cd
 
 RUN pip3 install Jetson.GPIO
 
