@@ -29,8 +29,7 @@ RUN echo "source ~/projects/envs/donkey/bin/activate" >> ~/.bashrc
 # RUN . ~/.bashrc
 
 RUN . ~/projects/envs/donkey/bin/activate
-
-RUN pip3 install -U pip testresources setuptools && \
+    pip3 install -U pip testresources setuptools && \
     pip3 install -U futures==3.1.1 protobuf==3.12.2 pybind11==2.5.0 && \
     pip3 install -U cython==0.29.21 pyserial && \
     pip3 install -U future==0.18.2 mock==4.0.2 h5py==2.10.0 \
