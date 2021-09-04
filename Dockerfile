@@ -21,7 +21,10 @@ RUN pip3 install Jetson.GPIO
 
 # omitting user modifications
 
-RUN cd ~ && mkdir projects && cd projects
+RUN cd ~ && mkdir projects
+
+RUN python --version
+
 #    && \
 #    mkdir envs && cd envs && pip3 install virtualenv
 
