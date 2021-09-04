@@ -51,7 +51,7 @@ RUN apt-get update && \
 #     tensorflow==2.3.1 && \
 #     apt-get update && apt-get install -y tensorrt
 
-RUN pip3 install pycuda
+RUN pip install --upgrade setuptools && pip3 install pycuda
 
 RUN cd ~/projects && wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whlcp p57jwntv436lfrd78inwl7iml6p13fzh.whl torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
     pip3 install torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
