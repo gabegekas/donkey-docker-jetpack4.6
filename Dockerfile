@@ -53,9 +53,9 @@ RUN apt-get update && \
 
 RUN pip3 install --upgrade setuptools && pip3 install pycuda
 
-RUN wget https://ffmpeg.org/releases/ffmpeg-4.2.'.tar.gz \
-   --no-check-certificate && tar -xf ffmpeg-4.2.'.tar.gz && \
-   cd ffmpeg-4.2.' && ./configure && make install
+RUN wget https://www.ffmpeg.org/releases/ffmpeg-4.4.tar.gz \
+   --no-check-certificate && tar -xf ffmpeg-4.4.tar.gz && \
+   cd ffmpeg-4.4 && ./configure && make install
 
 RUN cd ~/projects && apt-get install -y python3-distutils && \
     wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl && \
