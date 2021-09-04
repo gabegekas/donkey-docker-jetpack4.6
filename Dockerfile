@@ -53,13 +53,13 @@ RUN apt-get update && \
 
 RUN pip3 install --upgrade setuptools && pip3 install pycuda
 
-RUN cd ~/projects && wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl && \
+RUN cd ~/projects && wget https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.gz \
+    --no-check-certificate && tar -xf ffmpeg-4.2.2.tar.gz && \
+    cd ffmpeg-4.2.2 && ./configure && make install && \
+    wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl && \
     cp p57jwntv436lfrd78inwl7iml6p13fzh.whl torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
     pip3 install torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
     apt-get install -y libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev && \
-    wget https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.gz --no-check-certificate && \
-    tar -xf ffmpeg-4.2.2.tar.gz && cd ffmpeg-4.2.2 && \
-    ./configure && make install && \
     git clone https://github.com/pytorch/vision torchvision && \
     cd torchvision && \
     python setup.py install && \
