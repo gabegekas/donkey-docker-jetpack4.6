@@ -57,6 +57,9 @@ RUN cd ~/projects && wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78
     cp p57jwntv436lfrd78inwl7iml6p13fzh.whl torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
     pip3 install torch-1.8.0-cp36-cp36m-linux_aarch64.whl && \
     apt-get install -y libjpeg-dev zlib1g-dev libpython3-dev libavcodec-dev libavformat-dev libswscale-dev && \
+    wget https://ffmpeg.org/releases/ffmpeg-4.2.4.tar.gz --no-check-certificate && \
+    tar -xf ffmpeg-4.2.4.tar.gz && cd ffmpeg-4.2.4.tar.gz && \
+    ./configure && make build_all && make altinstall && \
     git clone https://github.com/pytorch/vision torchvision && \
     cd torchvision && \
     python setup.py install && \
