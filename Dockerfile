@@ -15,7 +15,7 @@ RUN apt-get install -y build-essential \
     libopenblas-dev git nano && \
     wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz --no-check-certificate && \
     tar -xf Python-3.6.9.tgz && cd Python-3.6.9 && \
-    ./configure --enable-optimizations && make && make altinstall && cd
+    make build_all && make altinstall && cd
 
 RUN pip3 install Jetson.GPIO
 
