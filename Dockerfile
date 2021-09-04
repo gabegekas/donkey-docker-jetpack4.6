@@ -46,10 +46,10 @@ RUN apt-get update && \
     termcolor==1.1.0 wrapt==1.12.1 google-pasta==0.2.0 && \
     pip3 install gdown
 
-RUN pip3 install --pre --extra-index-url \
-    https://developer.download.nvidia.com/compute/redist/jp/v45 \
-    tensorflow==2.3.1 && \
-    apt-get update && apt-get install -y tensorrt
+# RUN pip3 install --pre --extra-index-url \
+#     https://developer.download.nvidia.com/compute/redist/jp/v45 \
+#     tensorflow==2.3.1 && \
+#     apt-get update && apt-get install -y tensorrt
 
 RUN pip3 install pycuda
 
