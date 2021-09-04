@@ -13,8 +13,8 @@ RUN apt-get install -y build-essential \
     libffi-dev libcurl4-openssl-dev libssl-dev libpng-dev \
     libopenblas-dev openmpi-doc openmpi-bin libopenmpi-dev \
     libopenblas-dev git nano && \
-    wget https://www.python.org/ftp/python/3.6.9/Python-3.6.9.tgz --no-check-certificate && \
-    tar -xf Python-3.6.9.tgz && cd Python-3.6.9 && \
+    wget https://www.python.org/ftp/python/3.7.7/Python-3.7.7.tgz --no-check-certificate && \
+    tar -xf Python-3.7.7.tgz && cd Python-3.7.7 && \
     ./configure && make build_all && make altinstall && cd
 
 RUN pip3 install Jetson.GPIO
@@ -53,9 +53,9 @@ RUN apt-get update && \
 
 RUN pip3 install --upgrade setuptools && pip3 install pycuda
 
-RUN wget https://ffmpeg.org/releases/ffmpeg-4.2.0.tar.gz \
-    --no-check-certificate && tar -xf ffmpeg-4.2.0.tar.gz && \
-    cd ffmpeg-4.2.0 && ./configure && make install
+# RUN wget https://ffmpeg.org/releases/ffmpeg-4.2.2.tar.gz \
+#     --no-check-certificate && tar -xf ffmpeg-4.2.2.tar.gz && \
+#     cd ffmpeg-4.2.2 && ./configure && make install
 
 RUN cd ~/projects && apt-get install -y python3-distutils && \
     wget https://nvidia.box.com/shared/static/p57jwntv436lfrd78inwl7iml6p13fzh.whl && \
